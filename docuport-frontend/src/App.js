@@ -37,18 +37,16 @@ function AppRoutes() {
     setUser({ id, email });
   };
 
-const handleLogout = () => {
-  localStorage.removeItem('user_id');
-  localStorage.removeItem('user_email'); // ✅ Optional: clear email too
-  setUser(null);
-  navigate('/');
-};
+  const handleLogout = () => {
+    localStorage.removeItem('user_id');
+    localStorage.removeItem('user_email');
+    setUser(null);
+    navigate('/');
+  };
 
-
-const handleHome = () => {
-  navigate('/'); // ✅ Just go to the welcome page
-};
-
+  const handleHome = () => {
+    navigate('/');
+  };
 
   return (
     <div>
@@ -79,6 +77,8 @@ const handleHome = () => {
 
       <Routes>
         <Route path="/" element={<Welcome />} />
+
+        {/* Modified login logic happens inside Welcome.jsx */}
         <Route path="/login" element={<OTPLogin onLogin={handleLogin} />} />
         <Route path="/dashboard" element={user ? <Dashboard /> : <Navigate to="/login" />} />
         <Route path="/upload" element={user ? <Upload /> : <Navigate to="/login" />} />
@@ -89,7 +89,7 @@ const handleHome = () => {
 
 export default function App() {
   return (
-    <AuthProvider> {/* ✅ wrap the app with context */}
+    <AuthProvider>
       <Router>
         <AppRoutes />
       </Router>

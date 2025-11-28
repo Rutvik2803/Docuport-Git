@@ -37,7 +37,7 @@ export default function OTPLogin({ onLogin }) {
   return (
     <div className="login-container">
       <form onSubmit={(e) => e.preventDefault()} className="login-form">
-        <h2 className="login-title">OTP Login</h2>
+        <h2 className="login-title">Login</h2>
 
         <input
           type="email"
