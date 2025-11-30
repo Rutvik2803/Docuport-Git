@@ -5,7 +5,7 @@ import { useAuth } from '../context/AuthContext';
 import './Welcome.css';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faInstagram, faLinkedin, faTwitter } from '@fortawesome/free-brands-svg-icons';
+import { faGithub, faInstagram, faLinkedin, faTwitter } from '@fortawesome/free-brands-svg-icons';
 
 export default function Welcome() {
   const navigate = useNavigate();
@@ -167,12 +167,18 @@ export default function Welcome() {
           </div>
 
           <div ref={socialsRef} className="socials-section">
-            <h2>Connect with us</h2>
             <div className="social-icons">
               <a href="https://www.instagram.com/rutvviik" target="_blank" rel="noopener noreferrer">
                 <FontAwesomeIcon icon={faInstagram} size="2x" />
               </a>
+              <a href="https://www.linkedin.com/in/rutvik-pradhan-59040724b/" target="_blank" rel="noopener noreferrer">
+                <FontAwesomeIcon icon={faLinkedin} size="2x" />
+              </a>
+              <a href="https://github.com/Rutvik2803" target="_blank" rel="noopener noreferrer">
+                <FontAwesomeIcon icon={faGithub} size="2x" />
+              </a>
             </div>
+            <h2>Connect with us</h2>
           </div>
 
         </div>
